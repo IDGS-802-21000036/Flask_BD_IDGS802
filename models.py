@@ -9,7 +9,7 @@ class Alumnos(db.Model):
     apaterno = db.Column(db.String(50))
     amaterno = db.Column(db.String(50))
     email = db.Column(db.String(50))
-    create_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     
     def __repr__(self):
         return '<Alumno %r>' % self.nombre
