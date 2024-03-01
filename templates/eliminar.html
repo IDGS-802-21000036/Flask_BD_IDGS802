@@ -1,0 +1,27 @@
+{% extends "layout2.html"%}
+{%from "_macros.html" import render_field%}
+{%block content%}
+        <div class="container">
+                <div class="row">
+                        <form name="eliminar" action="/eliminar" id="eliminar" method="POST" novalidate>
+                                <div class="row control-group">
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                                {{ render_field(form.id, class="form-control") }}
+                                        </div>
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                                {{ render_field(form.nombre, class="form-control") }}
+                                        </div>
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                                {{ render_field(form.apaterno, class="form-control") }}
+                                        </div>
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                                {{ render_field(form.email, class="form-control") }}
+                                        </div>
+                                </div>
+                                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                                <input type="submit" name="eliminar" id="eliminar" value="Eliminar">
+                                <a href="/ABC_Completo" class="btn btn-success">Cancelar</a>
+                        </form>
+                </div>
+        </div>
+{%endblock%}
